@@ -13,7 +13,27 @@
 // //Write your code below this line:
 
 
+const genBuzz = (lowerLimit, upperLimit) => {
+        if (typeof lowerLimit !== 'number' || typeof upperLimit !== 'number') {
+            console.log(`${lowerLimit} or ${uppperLimit} is not a number`);
+        } else if (lowerLimit > upperLimit) {
+            console.log(`${lowerLimit} is greater than ${upperLimit}`)
+        } else {
+            for (let i = 1; i <= upperLimit; i++) {
+                if (i % 15 == 0) {
+                    console.log('GenBuzz')
+                } else if (i % 5 == 0) {
+                    console.log("Buzz")
+                } else if (i % 3 == 0) {
+                    console.log("Gen")
+                } else {
+                    console.log(i)
+                }
+            }
+        }
+}
 
+genBuzz(11, 10)
 
 // 2. Leap Year
 
@@ -35,8 +55,22 @@
 
 //Write your code below this line:
 
+const leapYear = (year) => {
+    if (year % 400 == 0 ) {
+        console.log(`${year} is a leap year`)
+    } else if (year % 100 == 0) {
+        console.log(`${year} is not a leap year`)
+    } else if (year % 4 == 0) {
+        console.log(`${year} is a leap year!`)
+    } else if (year % 1 == 0) {
+        console.log(`${year} is not a leap year!`)
+    }
+    else {
+        console.log("Please put in a year")
+    }
+}
 
-
+leapYear()
 
 
 // 3. Perfect Square
@@ -53,3 +87,45 @@
 // You may not use the built-in Math.sqrt method
 
 //Write your code below this line:
+
+// const perfectSquare = (num) => {
+//      if (i * i == num) {
+//         for (var i = 0; i * i <= num; i++) {
+//         console.log(`${num} is a perfect square!`);
+//     } else {
+//         console.log("This is not a perfect sqaure")
+//     }
+// }
+// }
+
+// perfectSquare(9);
+
+// const num = 16
+
+// const isPerfectSquare = (num) => {
+//     let i = 1;
+//     while (i * i <= num) {
+//       if (i * i !== num) {
+//         i++;
+//         console.log(i);
+//         continue;
+//       }
+//       console.log("perfect");
+//     }
+//     console.log("Not perfect");
+//   };
+//   console.log(isPerfectSquare(num));
+  
+const num = 10;
+const isPerfectSquare = num => {
+   let i = 1;
+   while(i * i <= num){
+      if(i * i !== num){
+         i++;
+         continue;
+      };
+      return 'This is a perfect square!';
+   };
+   return 'This is not a perfect square!';
+};
+console.log(isPerfectSquare(num));
